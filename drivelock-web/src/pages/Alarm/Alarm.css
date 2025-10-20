@@ -1,0 +1,21 @@
+.alarm-grid{
+  display:grid; gap:20px; grid-template-columns: 1fr 1fr;
+}
+.row{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:14px; margin:12px 0;
+}
+.label{color:#a6c3dd; min-width:120px}
+.toggle{display:flex; background:#152e40; padding:4px; border-radius:14px; gap:6px}
+.tbtn{
+  border:0; background:transparent; color:#cfe9ff; padding:8px 12px; border-radius:10px; cursor:pointer;
+}
+.tbtn.active{background:linear-gradient(135deg,#1b6de3,#00e5ff); color:#03202c; font-weight:800}
+.range-wrap input{width:100%}
+.range-scale{display:flex; justify-content:space-between; color:#a6c3dd; margin-top:6px}
+.table{width:100%; border-collapse:collapse}
+.table th,.table td{padding:10px 12px; border-bottom:1px solid #14374f}
+
+@media (max-width:1000px){
+  .alarm-grid{grid-template-columns:1fr}
+}

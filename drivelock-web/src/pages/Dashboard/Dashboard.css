@@ -1,0 +1,26 @@
+.dash-grid{
+  display:grid; gap:20px; grid-template-columns:repeat(3,1fr);
+}
+.card{
+  background:#0f2b3d; border-radius:16px; padding:16px;
+  box-shadow:0 8px 28px rgba(0,0,0,.3);
+}
+.card-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px}
+.card-head h3{margin:0; color:#00e5ff}
+.box-muted{
+  display:grid; place-items:center; height:200px; border-radius:14px;
+  background:#0b2333; border:1px dashed #1d3e59; color:#6eaed4; font-weight:600;
+}
+.meta{color:#a6c3dd; margin:.35rem 0}
+.pill{
+  display:inline-flex; align-items:center; padding:4px 10px; border-radius:999px;
+  font-size:12px; font-weight:800;
+}
+.pill-success{background:#1a3c2b; color:#9af1be}
+.pill-info{background:#13334a; color:#9ed1ff}
+.status-row{display:flex; flex-wrap:wrap; gap:10px}
+.full{grid-column:1/-1}
+
+@media (max-width:1000px){
+  .dash-grid{grid-template-columns:1fr}
+}

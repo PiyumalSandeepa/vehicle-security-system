@@ -11,22 +11,17 @@ export default function Navbar() {
       </div>
 
       <nav className="nav-links">
-        <NavLink to="/dashboard" className={({isActive}) => `nav-item ${isActive ? "active" : ""}`}>
-          Dashboard
-        </NavLink>
-        <NavLink to="/gps" className={({isActive}) => `nav-item ${isActive ? "active" : ""}`}>
-          GPS
-        </NavLink>
-        {/* NEW */}
-        <NavLink to="/alarm" className={({isActive}) => `nav-item ${isActive ? "active" : ""}`}>
-          Alarm
-        </NavLink>
-        <NavLink to="/security" className={({isActive}) => `nav-item ${isActive ? "active" : ""}`}>
-          Security
-        </NavLink>
+        <NavLink to="/dashboard" className={({isActive}) => `nav-item ${isActive ? "active" : ""}`}>Dashboard</NavLink>
+        <NavLink to="/gps" className={({isActive}) => `nav-item ${isActive ? "active" : ""}`}>GPS</NavLink>
+        <NavLink to="/alarm" className={({isActive}) => `nav-item ${isActive ? "active" : ""}`}>Alarm</NavLink>
+        <NavLink to="/security" className={({isActive}) => `nav-item ${isActive ? "active" : ""}`}>Security</NavLink>
       </nav>
 
-      <button className="nav-btn" onClick={() => alert("TODO: auth")}>Login</button>
+      <div style={{display:'flex', gap:8}}>
+        <button className="nav-btn" onClick={() => navigate("/login")}>Login</button>
+        {/* optional: */}
+        {/* <button className="nav-btn" onClick={() => navigate("/signup")}>Signup</button> */}
+      </div>
     </header>
   );
 }

@@ -1,9 +1,11 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar.jsx";
-import Dashboard from "./pages//Dashboard/Dashboard.jsx";
+import Dashboard from "./pages/Dashboard/Dashboard.jsx";
 import GPS from "./pages/GPS/GPS.jsx";
-import Alarm from "./pages/Alarm/Alarm.jsx";        // ← add
-import Security from "./pages/Security/Security.jsx";  // ← add
+import Alarm from "./pages/Alarm/Alarm.jsx";
+import Security from "./pages/Security/Security.jsx";
+import Login from "./pages/auth/Login.jsx";     // ← new
+import Signup from "./pages/auth/Signup.jsx";   // ← new
 import "./index.css";
 
 export default function App() {
@@ -15,8 +17,10 @@ export default function App() {
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/gps" element={<GPS />} />
-          <Route path="/alarm" element={<Alarm />} />          {/* ← new */}
-          <Route path="/security" element={<Security />} />    {/* ← new */}
+          <Route path="/alarm" element={<Alarm />} />
+          <Route path="/security" element={<Security />} />
+          <Route path="/login" element={<Login />} />       {/* ← new */}
+          <Route path="/signup" element={<Signup />} />     {/* ← new */}
           <Route path="*" element={<h3 className="notfound">Not Found</h3>} />
         </Routes>
       </main>

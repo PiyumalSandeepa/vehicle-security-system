@@ -1,8 +1,10 @@
+// src/pages/auth/Login.jsx
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Auth.css";
+import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function Login({ setIsAdmin, setIsAuthenticated }) {
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", password: "" });
   const [err, setErr] = useState("");
@@ -12,13 +14,19 @@ export default function Login() {
   const onSubmit = (e) => {
     e.preventDefault();
     setErr("");
-    if (!form.email || !form.password) {
-      setErr("Please enter email and password.");
-      return;
+
+    // Simulating admin and normal user login with hardcoded values
+    if (form.email === "admin@admin.com" && form.password === "admin123") {
+      setIsAdmin(true); // Set to true for admin
+      setIsAuthenticated(true);
+      navigate("/admin/dashboard"); // Redirect to admin dashboard
+    } else if (form.email === "user@user.com" && form.password === "user123") {
+      setIsAdmin(false); // Set to false for normal user
+      setIsAuthenticated(true);
+      navigate("/dashboard"); // Redirect to normal user dashboard
+    } else {
+      setErr("Invalid credentials");
     }
-    // TODO: call backend here
-    // simulate success:
-    navigate("/dashboard");
   };
 
   return (

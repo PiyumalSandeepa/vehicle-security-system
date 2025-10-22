@@ -1,0 +1,51 @@
+/* Style the dashboard cards */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-color: #1c2b38;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #2d3a4f;
+}
+
+.card h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 18px;
+}
+
+/* Style the tables for Active Vehicles and Alerts */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #0f2b3d;
+  color: #fff;
+}
+
+tbody tr:hover {
+  background-color: #1c2b38;
+}
